@@ -1,0 +1,168 @@
+---
+name: Christian Reitan
+position: "Leg. Läk., Med. Dr."
+address: "Margaretha Krooks gata 3, 12654 Hägersten"
+phone: +46 (0) 70 476 09 83
+email: "reitan.christian@gmail.com"
+github: drwernicke
+headcolor: "000000"
+output: vitae::awesomecv
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                      warning = FALSE,
+                      message = FALSE)
+source("../scripts/install.R")
+```
+
+```{r get data, include=FALSE}
+## Education
+library(magrittr)
+
+## Publications - change google id here
+pubs <- scholar::get_publications("S3TOd7gAAAAJ&hl") %>% 
+  dplyr::mutate(author = author %>% 
+                  as.character %>% 
+                  stringr::str_trim(),
+                journal = journal %>% 
+                  replace(journal %in% "bioRxiv", "BioRxiv"), 
+                first_author = case_when(stringr::str_starts(author, "S Abbott") ~ TRUE,
+                                         TRUE ~ FALSE),
+                preprint = case_when(journal %in% c("bioRxiv", "BioRxiv") ~ TRUE,
+                                         TRUE ~ FALSE)) %>% 
+  dplyr::arrange(desc(year))
+
+# Manually remove posters
+posters <- c("Early Subjective Improvement of Exercise Capacity is an Indpendent Predictor of Long Term Survival in Cardiac Resynchronization Therapy Patients",
+             "Long-term results of cardiac resynchronization therapy: A comparison between CRT-pacemakers versus primary prophylactic CRT-defibrillators (vol 38, pg 758, 2015)",
+             "3291 Achieved biventricular pacing during the first year of follow-up predicts long-term outcome in patients with heart failure treated with cardiac resynchronization therapy",
+             "P1950 CHA2DS2-VASC score in a cohort of CRT patients",
+             "CHA2DS2-VASC score in a cohort of CRT patients",
+             "Ventricular high rate episodes predict increased mortality in heart failure patients treated with CRT (vol 49, pg 20, 2015)",
+             "P5683 Incremental hazard associated with the degree of advanced intaratrial block in cardiac resynchronization therapy treated heart failure patients",
+             "Reclassification of Treatment Strategy With Instantaneous Wave-Free Ratio and Fractional Flow Reserve",
+             "Positive Response to Cardiac Resynchronization Therapy-The Role of NTproBNP"
+)
+
+# Unelegant solution but wtf
+`%notin%` <- Negate(`%in%`)
+pubs <- 
+pubs %>%
+  filter(title %notin% posters)
+
+```
+
+# Utbildning/Examina
+```{r education}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Legeautorisasjon", "Helsedirektoratet", "Norge", "juni 2019", "Legitimation att arbeta som läkare i Norge.",
+  "Medicine Doktor", "Lunds Universitet", "Lund, Sverige", "7 september 2018", "Lunds Universitet, medicinska fakulteten, institutionen för kliniska vetenskaper, avd. för kardiologi. Doktorandutbildning. Avhandlingens titel: Cardiac Resynchronization Therapy - Risk stratification and long-term outcome",
+  "Legitimerad Läkare", "Socialstyrelsen", "Sverige", "6 juli 2017", "Efter fullgjord allmäntjänstgöring vid Skånes Universitetssjukhus.",
+"Läkarexamen", "Lunds Universitet", "Lund, Sverige", "19 januari 2014", "Efter fullgjord Läkarutbildning vid Lunds Universitet.",
+"Studentexamen", "Katedralskolan", "Lund, Sverige", "juni 2006", "Naturvetenskapligt program"
+ ) %>% 
+  detailed_entries(role, dates, company, loc, details)
+```
+
+# Arbetslivserfarenhet
+
+```{r work_exp}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Legitimerad läkare", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "oktober 2018 - pågående", "Medicinsk Enhet Thoraxkirurgi, Tema Hjärta-Kärl",
+  "Legitimerad läkare", "St Olavs Universitetssykehus", "Trondheim, Norge", "juni 2019 - pågående", "Vikarierande läkare, Klinikk for Thoraxkirurgi",
+  "Legitimerad läkare", "Skånes Universitetssjukhus", "Lund, Sverige", "september 2017 -  september 2018", "Sektion Thoraxkirurgi",
+  "Forskare", "Skånes Universitetssjukhus/Lunds Universitet", "Lund, Sverige", "juni 2017 - Augusti 2017", "Forskare/doktorand, Kardiologi",
+  "Allmäntjänstgöring", "Skånes Universitetssjukhus", "Malmö, Sverige", "juni 2015 - juni 2017", "Allmäntjänstgöring med forskning (Forskar-AT)",
+  "Underläkare", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "september 2014 - juni 2015", "Thoraxkliniken",
+  "Underläkare", "Skånes Universitetssjukhus", "Lund, Sverige", "februari 2014 - juli 2014", "Akutmottagningen"
+ ) %>% 
+  detailed_entries(role, dates, company, loc, details)
+```
+\newpage
+# Övrigt 
+
+## Affilieringar
+```{r}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Anknuten forskare", "Karolinska Institutet", "Stockholm, Sverige", "2020 - pågående", "Institutionen för molekylär medicin och kirurgi, Thoraxkirurgi",
+  "Anknuten forskare", "Lunds Universitet", "Lund, Sverige", "2018-2020", "Institutionen för kliniska vetenskaper Lund, Kardiologi",
+  "ADoktorand", "Lunds Universitet", "Lund, Sverige", "2014-2018", "Institutionen för kliniska vetenskaper Lund, Kardiologi"
+ ) %>% 
+  detailed_entries(role, dates, company, loc, details)
+```
+
+
+## Anslag
+```{r anslag}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Forskningsanslag", "Region Skåne", "Lund, Sverige", "2018", "Södra sjukvårdsregionens doktorandsanslag, 180 000 kr. Dnr. REGSKANE-724061"
+ ) %>% 
+  detailed_entries(role, dates, company, loc, details)
+```
+
+## Kurser
+```{r}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "CALS", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "september 2019", "Cardiac Surgery Advanced Life Support, hjärtstoppsomhändertagande av hjärtopererade patienter.",
+  "Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Tillämpad statistik II - inriktning mot klinisk forskning",
+  "ATLS", "Norra Älvsborgs Länssjukhus", "Trollhättan, Sverige", "november 2017", "Advanced Trauma Life Support, kurs i akut traumaomhändertagande.",
+  "Forskningskurs", "Svenska kardiologföreningen", "Rosersberg, Sverige", "november 2016","Kardiologiskt forskningsmöte",
+  "Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Muntlig kommunikation",
+  "Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Vetenskaplig kommunikation",
+  "Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Tillämpad statistik - allmän inriktning"
+ ) %>% 
+  detailed_entries(role, dates, company, loc, details)
+```
+
+## Språk
+```{r}
+tribble(
+  ~ what, ~ when, ~ with,
+"Norska","", "Modersmål",
+"Svenska", "", "Modersmål",
+"Engelska", "", "Goda kunskaper",
+"Tyska", "", "Basal nivå",
+
+ ) %>% 
+  brief_entries(what, when, with)
+```
+
+
+## Färdigheter
+
+```{r, other}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+"Programmering","", "", "", "Goda kunskaper om programmering i R samt Rmarkdown, Latex, och git.",
+"Programmering","", "", "", "Praktisk erfarenhet av överlevnadsanalys inklusive relativ överlevnad, propensity score-baserade metoder, generalised boosted models och 'Tidy data'.",
+"Körkort", "", "", "", "Klass B"
+ ) %>% 
+  detailed_entries(role, dates, company, loc, details)
+````
+
+\pagebreak
+
+# Publikationer
+
+*Automatisk lista från google Scholar. klicka [här](https://scholar.google.com/citations?user=S3TOd7gAAAAJ&hl=sv&oi=ao) för DOIs och citeringar.*
+
+
+```{r}
+pubs %>% 
+  detailed_entries(
+    what = title,
+    when = year,
+    with = author,
+    where = journal,
+    .protect = TRUE
+  )
+```
+
+
+
