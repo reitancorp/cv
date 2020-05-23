@@ -1,7 +1,7 @@
 # Christian Reitan's Curriculum Vitae
 
 
-Academic CV built using R. Academic references retrieved from [Google Scholar](https://scholar.google.com/citations?user=GqZm90IAAAAJ&hl=en) each week. See [here](https://www.samabbott.co.uk/cv/cv.pdf). I built it using [Sam Abbotts](https://github.com/seabbs/cv) CV, mostly for the looks though. It is, however, a nice and simple CV, feel free to use it as a template. 
+Academic CV built using R. Academic references retrieved from [Google Scholar](https://scholar.google.com/citations?user=GqZm90IAAAAJ&hl=en) each week. I built it using [Sam Abbotts](https://github.com/seabbs/cv) CV, mostly for the looks though. It is, however, a nice and simple CV, feel free to use it as a template. 
 
 ## Structure
 
