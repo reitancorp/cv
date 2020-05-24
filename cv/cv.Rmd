@@ -31,7 +31,9 @@ pubs <- scholar::get_publications("S3TOd7gAAAAJ&hl") %>%
                                          TRUE ~ FALSE),
                 preprint = case_when(journal %in% c("bioRxiv", "BioRxiv") ~ TRUE,
                                          TRUE ~ FALSE)) %>% 
-  dplyr::arrange(desc(year))
+  dplyr::arrange(desc(year)) %>%
+  mutate(journal = case_when(journal == 'Lund University' ~ 'Lund University, Thesis',
+                             TRUE ~ as.character(journal)))
 
 # Manually remove posters
 posters <- c("Early Subjective Improvement of Exercise Capacity is an Indpendent Predictor of Long Term Survival in Cardiac Resynchronization Therapy Patients",
@@ -42,14 +44,15 @@ posters <- c("Early Subjective Improvement of Exercise Capacity is an Indpendent
              "Ventricular high rate episodes predict increased mortality in heart failure patients treated with CRT (vol 49, pg 20, 2015)",
              "P5683 Incremental hazard associated with the degree of advanced intaratrial block in cardiac resynchronization therapy treated heart failure patients",
              "Reclassification of Treatment Strategy With Instantaneous Wave-Free Ratio and Fractional Flow Reserve",
-             "Positive Response to Cardiac Resynchronization Therapy-The Role of NTproBNP"
+             "Positive Response to Cardiac Resynchronization Therapy-The Role of NTproBNP",
+             "Incremental hazard associated with the degree of advanced intaratrial block in cardiac resynchronization therapy treated heart failure patients"
 )
 
 # Unelegant solution but wtf
 `%notin%` <- Negate(`%in%`)
 pubs <- 
 pubs %>%
-  filter(title %notin% posters)
+  filter(title %notin% posters) 
 
 ```
 
@@ -72,7 +75,7 @@ tribble(
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
   "Legitimerad läkare", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "oktober 2018 - pågående", "Medicinsk Enhet Thoraxkirurgi, Tema Hjärta-Kärl",
-  "Legitimerad läkare", "St Olavs Universitetssykehus", "Trondheim, Norge", "juni 2019 - pågående", "Vikarierande läkare, Klinikk for Thoraxkirurgi",
+  "Legitimerad läkare", "St Olavs Universitetssykehus", "Trondheim, Norge", "juni 2019 - pågående", "Vikarierande läkare, Klinikk for Thoraxkirurgi. Enstaka veckor.",
   "Legitimerad läkare", "Skånes Universitetssjukhus", "Lund, Sverige", "september 2017 -  september 2018", "Sektion Thoraxkirurgi",
   "Forskare", "Skånes Universitetssjukhus/Lunds Universitet", "Lund, Sverige", "juni 2017 - Augusti 2017", "Forskare/doktorand, Kardiologi",
   "Allmäntjänstgöring", "Skånes Universitetssjukhus", "Malmö, Sverige", "juni 2015 - juni 2017", "Allmäntjänstgöring med forskning (Forskar-AT)",
