@@ -108,21 +108,21 @@ tribble(
   detailed_entries(role, dates, company, loc, details)
 ```
 
-<!-- ## Kurser
-```{r, eval = F}
+## Kurser
+```{r courses}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
   "CALS", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "september 2019", "Cardiac Surgery Advanced Life Support, hjärtstoppsomhändertagande av hjärtopererade patienter.",
-  "Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Tillämpad statistik II - inriktning mot klinisk forskning",
+  #"Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Tillämpad statistik II - inriktning mot klinisk forskning",
   "ATLS", "Norra Älvsborgs Länssjukhus", "Trollhättan, Sverige", "november 2017", "Advanced Trauma Life Support, kurs i akut traumaomhändertagande.",
-  "Forskningskurs", "Svenska kardiologföreningen", "Rosersberg, Sverige", "november 2016","Kardiologiskt forskningsmöte",
-  "Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Muntlig kommunikation",
-  "Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Vetenskaplig kommunikation",
-  "Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Tillämpad statistik - allmän inriktning"
+  #"Forskningskurs", "Svenska kardiologföreningen", "Rosersberg, Sverige", "november 2016","Kardiologiskt forskningsmöte",
+  #"Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Muntlig kommunikation",
+  #"Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Vetenskaplig kommunikation",
+  #"Doktorandkurser", "Lunds Universitet", "Lund, Sverige", "2016-2018", "Tillämpad statistik - allmän inriktning"
  ) %>% 
   detailed_entries(role, dates, company, loc, details)
 ```
---->
+
 
 ## Språk
 ```{r}
