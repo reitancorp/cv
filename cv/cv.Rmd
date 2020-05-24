@@ -63,7 +63,7 @@ tribble(
   "Legeautorisasjon", "Helsedirektoratet", "Norge", "juni 2019", "Legitimation att arbeta som läkare i Norge.",
   "Medicine Doktor", "Lunds Universitet", "Lund, Sverige", "7 september 2018", "Lunds Universitet, medicinska fakulteten, institutionen för kliniska vetenskaper, avd. för kardiologi. Doktorandutbildning. Avhandlingens titel: Cardiac Resynchronization Therapy - Risk stratification and long-term outcome",
   "Legitimerad Läkare", "Socialstyrelsen", "Sverige", "6 juli 2017", "Efter fullgjord allmäntjänstgöring vid Skånes Universitetssjukhus.",
-"Läkarexamen", "Lunds Universitet", "Lund, Sverige", "19 januari 2014", "Efter fullgjord Läkarutbildning vid Lunds Universitet.",
+"Läkarexamen", "Lunds Universitet", "Lund, Sverige", "19 januari 2014", "Efter fullgjord läkarutbildning vid Lunds Universitet.",
 "Studentexamen", "Katedralskolan", "Lund, Sverige", "juni 2006", "Naturvetenskapligt program"
  ) %>% 
   detailed_entries(role, dates, company, loc, details)
@@ -93,7 +93,7 @@ tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
   "Anknuten forskare", "Karolinska Institutet", "Stockholm, Sverige", "2020 - pågående", "Institutionen för molekylär medicin och kirurgi, Thoraxkirurgi",
   "Anknuten forskare", "Lunds Universitet", "Lund, Sverige", "2018-2020", "Institutionen för kliniska vetenskaper Lund, Kardiologi",
-  "ADoktorand", "Lunds Universitet", "Lund, Sverige", "2014-2018", "Institutionen för kliniska vetenskaper Lund, Kardiologi"
+  "Doktorand", "Lunds Universitet", "Lund, Sverige", "2014-2018", "Institutionen för kliniska vetenskaper Lund, Kardiologi"
  ) %>% 
   detailed_entries(role, dates, company, loc, details)
 ```
@@ -108,8 +108,8 @@ tribble(
   detailed_entries(role, dates, company, loc, details)
 ```
 
-## Kurser
-```{r}
+<!-- ## Kurser
+```{r, eval = F}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
   "CALS", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "september 2019", "Cardiac Surgery Advanced Life Support, hjärtstoppsomhändertagande av hjärtopererade patienter.",
@@ -122,6 +122,7 @@ tribble(
  ) %>% 
   detailed_entries(role, dates, company, loc, details)
 ```
+--->
 
 ## Språk
 ```{r}
@@ -153,7 +154,7 @@ tribble(
 
 # Publikationer
 
-*Automatisk lista från google Scholar. klicka [här](https://scholar.google.com/citations?user=S3TOd7gAAAAJ&hl=sv&oi=ao) för DOIs och citeringar.*
+*Automatisk lista genererad från Google Scholar. Klicka [här](https://scholar.google.com/citations?user=S3TOd7gAAAAJ&hl=sv&oi=ao) för DOIs och citeringar.*
 
 
 ```{r}
