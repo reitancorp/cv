@@ -166,7 +166,7 @@ pubs %>%
     with = author,
     where = journal,
     .protect = TRUE
-  )
+  ) 
 ```
 
 

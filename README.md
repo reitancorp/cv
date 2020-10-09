@@ -13,7 +13,7 @@ Can be found [here](https://github.com/drwernicke/cv/raw/master/cv/cv.pdf).
 ## Tools
 
 - The [`{vitae}`](https://docs.ropensci.org/vitae/) :package: is used to provide a CV template.
-- [`{tidyverse}`](https://www.tidyverse.org) :tool: are used for data read in and manipulation.
+- [`{tidyverse}`](https://www.tidyverse.org) :wrench: are used for data read in and manipulation.
 - [`{here}`](https://here.r-lib.org) :package: for path management.
 - [`{scholar}`](https://github.com/jkeirstead/scholar) :package: is used to pull papers from Google Scholar.
 - [`{tinytex}`](https://github.com/yihui/tinytex) :package: to manage LaTex installation and additional packages.
