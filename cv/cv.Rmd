@@ -74,7 +74,8 @@ tribble(
 ```{r work_exp}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
-  "Legitimerad läkare", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "oktober 2018 - pågående", "Medicinsk Enhet Thoraxkirurgi, Tema Hjärta-Kärl",
+  "Legitimerad läkare", "Danderyds Sjukhus", "Danderyd, Sverige", "augusti 2020 - pågående", "Hjärtkliniken",
+    "Legitimerad läkare", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "oktober 2018 - augusti 2020", "Medicinsk Enhet Thoraxkirurgi, Tema Hjärta-Kärl",
   "Legitimerad läkare", "St Olavs Universitetssykehus", "Trondheim, Norge", "juni 2019 - pågående", "Vikarierande läkare, Klinikk for Thoraxkirurgi. Enstaka veckor.",
   "Legitimerad läkare", "Skånes Universitetssjukhus", "Lund, Sverige", "september 2017 -  september 2018", "Sektion Thoraxkirurgi",
   "Forskare", "Skånes Universitetssjukhus/Lunds Universitet", "Lund, Sverige", "juni 2017 - Augusti 2017", "Forskare/doktorand, Kardiologi",
