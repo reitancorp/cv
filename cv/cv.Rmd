@@ -4,7 +4,7 @@ position: "Leg. Läk., Med. Dr."
 address: "Margaretha Krooks gata 3, 12654 Hägersten"
 phone: +46 (0) 70 476 09 83
 email: "reitan.christian@gmail.com"
-github: drwernicke
+github: reitancorp
 headcolor: "000000"
 output: vitae::awesomecv
 ---
