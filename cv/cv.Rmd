@@ -144,12 +144,14 @@ tribble(
 ```{r, other}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
-"Programmering","", "", "", "Goda kunskaper om programmering i R samt Rmarkdown, Latex, och git.",
-"Programmering","", "", "", "Praktisk erfarenhet av överlevnadsanalys inklusive relativ överlevnad, propensity score-baserade metoder, generalised boosted models och 'Tidy data'.",
+"Programmering", "", "", "", "Goda kunskaper om programmering i R samt Rmarkdown, Latex, och git.",
+"Programmering", "", "", "", "Praktisk erfarenhet av överlevnadsanalys inklusive relativ överlevnad, propensity score-baserade metoder, generalised boosted models och Tidy data.",
 "Körkort", "", "", "", "Klass B"
  ) %>% 
   detailed_entries(role, dates, company, loc, details)
-````
+
+
+```
 
 \pagebreak
 
@@ -160,6 +162,7 @@ tribble(
 
 ```{r}
 pubs %>% 
+  mutate(year = as.character(year)) %>%
   detailed_entries(
     what = title,
     when = year,
