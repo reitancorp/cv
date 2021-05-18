@@ -74,7 +74,7 @@ tribble(
 ```{r work_exp}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
-  "Legitimerad läkare", "Danderyds Sjukhus", "Danderyd, Sverige", "augusti 2020 - pågående", "Hjärtkliniken",
+  "ST-läkare i Kardiologi", "Danderyds Sjukhus", "Danderyd, Sverige", "augusti 2020 - pågående", "Hjärtkliniken",
     "Legitimerad läkare", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "oktober 2018 - augusti 2020", "Medicinsk Enhet Thoraxkirurgi, Tema Hjärta-Kärl",
   "Legitimerad läkare", "St Olavs Universitetssykehus", "Trondheim, Norge", "juni 2019 - pågående", "Vikarierande läkare, Klinikk for Thoraxkirurgi. Enstaka veckor.",
   "Legitimerad läkare", "Skånes Universitetssjukhus", "Lund, Sverige", "september 2017 -  september 2018", "Sektion Thoraxkirurgi",
@@ -92,7 +92,9 @@ tribble(
 ```{r}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
-  "Anknuten forskare", "Karolinska Institutet", "Stockholm, Sverige", "2020 - pågående", "Institutionen för molekylär medicin och kirurgi, Thoraxkirurgi",
+  
+  "Anknuten forskare", "Karolinska Institutet", "Stockholm, Sverige", "2020 - pågående", "Institutionen för kliniska vetenskaper Danderyds sjukhus, Kardiologi",
+  "Anknuten forskare", "Karolinska Institutet", "Stockholm, Sverige", "2020 - 2021", "Institutionen för molekylär medicin och kirurgi, Thoraxkirurgi",
   "Anknuten forskare", "Lunds Universitet", "Lund, Sverige", "2018-2020", "Institutionen för kliniska vetenskaper Lund, Kardiologi",
   "Doktorand", "Lunds Universitet", "Lund, Sverige", "2014-2018", "Institutionen för kliniska vetenskaper Lund, Kardiologi"
  ) %>% 
@@ -145,7 +147,7 @@ tribble(
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
 "Programmering", "", "", "", "Goda kunskaper om programmering i R samt Rmarkdown, Latex, och git.",
-"Programmering", "", "", "", "Praktisk erfarenhet av överlevnadsanalys inklusive relativ överlevnad, propensity score-baserade metoder, generalised boosted models och Tidy data.",
+"Programmering", "", "", "", "Praktisk erfarenhet av epidemiologisk statistik inklusive relativ överlevnad, propensity score-baserade metoder, ML-metoder och Tidy data.",
 "Körkort", "", "", "", "Klass B"
  ) %>% 
   detailed_entries(role, dates, company, loc, details)
@@ -170,7 +172,7 @@ pubs %>%
     where = journal,
     .protect = TRUE
   ) 
-```
+ ```
 
 
 
