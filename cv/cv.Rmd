@@ -1,9 +1,9 @@
 ---
 name: Christian Reitan
 position: "Leg. Läk., Med. Dr."
-address: "Margaretha Krooks gata 3, 12654 Hägersten"
+address: "Lövängsgatan 12, 11544 Stockholm"
 phone: +46 (0) 70 476 09 83
-email: "reitan.christian@gmail.com"
+email: "christian.reitan@ki.se"
 github: reitancorp
 headcolor: "000000"
 output: vitae::awesomecv
