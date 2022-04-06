@@ -54,6 +54,11 @@ pubs <-
 pubs %>%
   filter(title %notin% posters) 
 
+# Add year to SCAPIS - might remove later
+pubs <- 
+pubs %>%
+  mutate(year = ifelse(pubid == "4DMP91E08xMC", 2022, year)) %>%
+  arrange(desc(year))
 ```
 
 # Utbildning/Examina
@@ -76,7 +81,7 @@ tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
   "ST-läkare i Kardiologi", "Danderyds Sjukhus", "Danderyd, Sverige", "augusti 2020 - pågående", "Hjärtkliniken",
     "Legitimerad läkare", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "oktober 2018 - augusti 2020", "Medicinsk Enhet Thoraxkirurgi, Tema Hjärta-Kärl",
-  "Legitimerad läkare", "St Olavs Universitetssykehus", "Trondheim, Norge", "juni 2019 - pågående", "Vikarierande läkare, Klinikk for Thoraxkirurgi. Enstaka veckor.",
+  "Legitimerad läkare", "St Olavs Universitetssykehus", "Trondheim, Norge", "juni 2019 - 2020", "Vikarierande läkare, Klinikk for Thoraxkirurgi. Enstaka veckor.",
   "Legitimerad läkare", "Skånes Universitetssjukhus", "Lund, Sverige", "september 2017 -  september 2018", "Sektion Thoraxkirurgi",
   "Forskare", "Skånes Universitetssjukhus/Lunds Universitet", "Lund, Sverige", "juni 2017 - Augusti 2017", "Forskare/doktorand, Kardiologi",
   "Allmäntjänstgöring", "Skånes Universitetssjukhus", "Malmö, Sverige", "juni 2015 - juni 2017", "Allmäntjänstgöring med forskning (Forskar-AT)",
@@ -88,12 +93,21 @@ tribble(
 \newpage
 # Övrigt 
 
-## Affilieringar
+## Handledarskap
 ```{r}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
   
-  "Anknuten forskare", "Karolinska Institutet", "Stockholm, Sverige", "2020 - pågående", "Institutionen för kliniska vetenskaper Danderyds sjukhus, Kardiologi",
+  "Doktorandhandledning", "Karolinska Institutet Danderyds Sjukhus", "Stockholm, Sverige", "2020 - pågående", "Bihandledare för Eleonora Hamiltons doktorandprojekt \"Post mycardial infarction heart failure, baseline characteristics, prognosis and treatment effects.\"" ,
+ ) %>% 
+  detailed_entries(role, dates, company, loc, details)
+```
+
+## Affilieringar
+```{r}
+tribble(
+  ~ role, ~ company, ~ loc, ~ dates, ~ details,
+  "Anknuten forskare/Postdoc", "Karolinska Institutet", "Stockholm, Sverige", "2020 - pågående", "Institutionen för kliniska vetenskaper Danderyds sjukhus, Kardiologi",
   "Anknuten forskare", "Karolinska Institutet", "Stockholm, Sverige", "2020 - 2021", "Institutionen för molekylär medicin och kirurgi, Thoraxkirurgi",
   "Anknuten forskare", "Lunds Universitet", "Lund, Sverige", "2018-2020", "Institutionen för kliniska vetenskaper Lund, Kardiologi",
   "Doktorand", "Lunds Universitet", "Lund, Sverige", "2014-2018", "Institutionen för kliniska vetenskaper Lund, Kardiologi"
@@ -112,7 +126,7 @@ tribble(
 ```
 
 ## Kurser
-```{r courses}
+```{r courses, eval = F}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
   "CALS", "Karolinska Universitetssjukhuset", "Stockholm, Sverige", "september 2019", "Cardiac Surgery Advanced Life Support, hjärtstoppsomhändertagande av hjärtopererade patienter.",
@@ -146,7 +160,7 @@ tribble(
 ```{r, other}
 tribble(
   ~ role, ~ company, ~ loc, ~ dates, ~ details,
-"Programmering", "", "", "", "Goda kunskaper om programmering i R samt Rmarkdown, Latex, och git.",
+"Programmering", "", "", "", "Goda kunskaper om programmering i R/Rmarkdown, Latex, och git.",
 "Programmering", "", "", "", "Praktisk erfarenhet av epidemiologisk statistik inklusive relativ överlevnad, propensity score-baserade metoder, ML-metoder och Tidy data.",
 "Körkort", "", "", "", "Klass B"
  ) %>% 
